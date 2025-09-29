@@ -65,13 +65,13 @@ price_per_liter_php <- c(52.50, 57.25, 60.00, 65.00, 74.25, 54.00)
 purchase_quantity_liters <- c(25, 30, 40, 50, 10, 45)
 
 #b)
-fuel_data <- data.frame(
+fuel_purchase <- data.frame(
 Month = month,
 Price_per_Liter_PHP = price_per_liter_php,
 Purchase_Quantity_Liters = purchase_quantity_liters
 )
 
-fuel_data
+fuel_purchase
 
 ```
 
