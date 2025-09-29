@@ -72,7 +72,6 @@ Purchase_Quantity_Liters = purchase_quantity_liters
 )
 
 fuel_purchase
-
 ```
 
 
