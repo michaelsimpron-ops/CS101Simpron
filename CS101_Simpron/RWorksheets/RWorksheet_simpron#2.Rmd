@@ -59,12 +59,12 @@ x
 
 ```{r}
 #6
-#a)
+
 month <- c("Jan", "Feb", "March", "Apr", "May", "June")
 price_per_liter_php <- c(52.50, 57.25, 60.00, 65.00, 74.25, 54.00)
 purchase_quantity_liters <- c(25, 30, 40, 50, 10, 45)
 
-#b)
+#a)
 fuel_purchase <- data.frame(
 Month = month,
 Price_per_Liter_PHP = price_per_liter_php,
@@ -72,6 +72,34 @@ Purchase_Quantity_Liters = purchase_quantity_liters
 )
 
 fuel_purchase
+
+#b)
+average <- weighted.mean(price_per_liter_php, purchase_quantity_liters)
+average
 ```
+
+```{r}
+#7
+rivers
+data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
+sd(rivers), min(rivers), max(rivers))
+data
+
+```
+
+```{r}
+#8
+#a)
+Power <- 1:25
+Celebrity <- c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil Mcgraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+Pay <- c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
+jk <- which(Celebrity == "J.K Rowling")
+Power[jk] <- 15
+Pay[jk] <- 90
+celebrity_df <- data.frame(Power, Celebrity, Pay)
+celebrity_df[jk, ]
+```
+
+
 
 
