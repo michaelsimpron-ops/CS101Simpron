@@ -91,13 +91,14 @@ data
 #8
 #a)
 Power <- 1:25
-Celebrity <- c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil Mcgraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+celebrity <- c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil Mcgraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
 Pay <- c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
-jk <- which(Celebrity == "J.K Rowling")
+jk <- which(celebrity == "J.K Rowling")
 Power[jk] <- 15
 Pay[jk] <- 90
-celebrity_df <- data.frame(Power, Celebrity, Pay)
+celebrity_df <- data.frame(Power, celebrity, Pay)
 celebrity_df[jk, ]
+
 ```
 
 
