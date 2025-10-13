@@ -1,0 +1,189 @@
+---
+title: "RWorksheet_simpron#3a"
+author: "Michael T. Simpron"
+date: "2025-10-12"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##1.
+```{r}
+LETTERS
+
+##BASED ON LETTERS
+#a)
+LET1 <- c(LETTERS[1:11])
+
+#b)
+LET2 <- c(LETTERS[seq(1, 26, 2)])
+
+#c)
+vowels <- LETTERS[LETTERS %in% c("A", "E", "I", "O", "U")]
+print(vowels)
+
+
+letters
+
+#BASED on letters
+
+#d)
+let1 <- c(letters[22:26])
+
+#e)
+let2 <- c(letters[16:23])
+```
+
+##2.
+```{r}
+#a
+city <- c("Tuguegarao City","Manila","Iloilo City","Tacloban","Samal Island","Davao City")
+
+
+#b
+temp <- c(42, 39, 34, 34, 30, 27)
+
+#c
+table1 <- data.frame (
+  City=city,
+  Temperature=temp
+)
+table1
+
+#d
+table2 <- data.frame(
+  City=city,
+  Temperature=temp
+)
+table2
+
+#e
+str(table1)
+str(table2)
+#Counted the variables per table and the date inside the object.
+
+
+
+
+#f
+table2[3:4,]
+
+#g
+city_highest <- table2$City[which.max(table2$Temperature)]
+city_lowest <- table2$City[which.min(table2$Temperature)]
+
+paste("City with highest temperature:", city_highest )
+paste("City with lowest temperature:", city_lowest )
+
+```
+
+##1. MATRIX
+```{r}
+# row = 2
+matrix(c(5,6,7,4,3,2,1,2,3,7,8,9),nrow = 2)
+
+# row = 3 and column = 2
+matrix(data = c(3,4,5,6,7,8),3,2)
+
+# creating a diagonal matrix where x value will always be 1
+diag(1,nrow = 6,ncol = 5)
+
+diag(6)
+
+```
+
+
+##2.MATRIX
+```{r}
+#a)
+matrix_d2 <- matrix(c(1:8, 11:14),3,4)
+matrix_d2
+
+#b)
+product_matrix <- matrix_d2 * 2
+print(product_matrix)
+
+#c
+matrix_d2[2,]
+
+#d
+matrix_d2[1:2, 3:4]
+
+#e
+matrix_d2[3, 2:3]
+
+#f
+matrix_d2 [,4]
+
+#g
+rownames(matrix_d2)<-c("isa", "dalawa","tatlo")
+colnames(matrix_d2)<-c("uno","dos","tres","quatro")
+matrix_d2
+
+#h
+dim(matrix_d2)<-c(6,2)
+matrix_d2
+```
+
+##ARRAY
+```{r}
+# creates a two-dimensional array containing numbers from 1 to 24 that have 3 rows and 4 columns
+array_dta <- array(c(1:24), c(3,4,2))
+array_dta
+
+# checking for the dimensions
+# row, column, dimension
+dim(array_dta)
+
+#checking for the number of elements
+length(array_dta)
+
+vectorA <- c(1:24)
+
+# creating an array
+an_Array <- array(vectorA, dim = c(3,4,2))
+an_Array
+```
+
+
+##3.ARRAY
+```{r}
+##a)
+#Original values
+values <- c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+
+#Repeat twice
+values_repeated <- rep(values, 2)
+
+#Create 3D array with 2 rows, 4 columns
+my_array <- array(values_repeated, dim = c(2, 4, 3))
+print(my_array)
+
+
+
+##b)
+dim(my_array)
+length(dim(my_array))
+#b. It has 3 dimensions
+
+
+
+##c)
+rownames <- c("a", "b")
+colnames <- c("A", "B", "C", "D")
+dimnames_list <- list(rownames, colnames, c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array"))
+
+
+
+#Assigning dimnames to the array
+dimnames(my_array) <- dimnames_list
+print(my_array)
+```
+
+
+
+
+
+
