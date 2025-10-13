@@ -1,5 +1,5 @@
 ---
-title: "RWorksheet_simpron#3a"
+title: "Worksheet-3a in R"
 author: "Michael T. Simpron"
 date: "2025-10-12"
 output: pdf_document
