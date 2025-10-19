@@ -1,0 +1,183 @@
+---
+title: "Worksheet-3b in R"
+author: "Michael T. Simpron"
+date: "2025-10-13"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##1.
+```{r}
+
+##a)
+df <- data.frame(
+  Respondents = 1:20,
+  Sex = c(2,2,1,2,2,2,1,2,2,1,1,2,2,2,2,2,2,1,1,2),
+  Fathers_Occupation = c(1,3,3,3,1,2,1,1,1,1,3,1,1,3,3,1,3,1,1,1),
+  Persons_at_Home = c(5,7,3,8,5,9,6,7,8,8,7,3,4,7,8,8,3,11,7,7),
+  Siblings_at_School = c(6,4,4,1,2,1,5,3,1,2,3,2,2,5,2,3,2,7,3,3),
+  Types_of_Houses = c(1,2,3,1,1,3,2,1,2,3,2,1,1,2,1,2,3,3,3,3)
+)
+
+print(df)
+```
+
+```{r}
+##b)
+str(df)
+
+summary(df)
+```
+
+```{r}
+##c)
+mean_siblings <- mean(df$Siblings_at_School)
+
+mean_siblings
+mean_siblings == 5
+```
+
+```{r}
+##d)
+df[1:2, ]
+```
+
+```{r}
+##e)
+df[c(3,5), c(2,4)]
+```
+
+```{r}
+##f)
+types_houses <- df$Types_of_Houses
+types_houses
+```
+
+```{r}
+##g)
+subset(df, Sex == 1 & Fathers_Occupation == 1)
+
+```
+
+```{r}
+##h)
+subset(df, Sex == 2 & Siblings_at_School >= 5)
+
+```
+##2.
+```{r}
+df = data.frame(Ints=integer(),
+
+Doubles=double(), Characters=character(),
+Logicals=logical(),
+Factors=factor(),
+stringsAsFactors=FALSE)
+
+print("Structure of the empty dataframe:")
+print(str(df))
+
+##a)
+#The data frame is defined but empty — it has 0 rows and 5 columns with various data types.
+#This kind of structure is useful when you want to initialize a data frame first and then add rows to it later.
+
+```
+##2.
+```{r}
+HouseholdData <- data.frame(
+  Respondents = 1:10,
+  Sex = c("Male", "Female", "Female", "Male", "Male", "Female", "Female", "Male", "Female", "Male"),
+  Fathers_Occupation = c(1, 2, 3, 3, 1, 2, 2, 1, 1, 3),
+  Persons_at_Home = c(5, 7, 3, 8, 6, 4, 4, 2, 11, 6),
+  Siblings_at_School = c(2, 3, 0, 5, 2, 3, 1, 2, 6, 2),
+  Types_of_Houses = c("Wood", "Concrete", "Concrete", "Wood", "Semi-concrete", 
+                      "Semi-concrete", "Wood", "Semi-concrete", "Semi-concrete", "Concrete")
+)
+
+print(HouseholdData)
+
+write.csv(HouseholdData, file = "HouseholdData.csv", row.names = FALSE)
+
+```
+
+```{r}
+##a)
+data <- read.csv("HouseholdData.csv")
+
+print(data)
+
+```
+
+```{r}
+##b)
+data$Sex <- factor(data$Sex, levels = c("Male", "Female"), labels = c(1, 2))
+data$Sex <- as.integer(as.character(data$Sex))
+print(data$Sex)
+```
+
+```{r}
+##c)
+colnames(data)[colnames(data) == "Types_of_Houses"] <- "Types_of_Houses"
+data$Types_of_Houses <- factor(data$Types_of_Houses, 
+                                levels = c("Wood", "Concrete", "Semi-concrete"), 
+                                labels = c(1, 2, 3))
+data$Types_of_Houses <- as.integer(as.character(data$Types_of_Houses))
+print(data$Types_of_Houses)
+```
+
+```{r}
+##d)
+data$Fathers_Occupation <- factor(data$Fathers_Occupation, 
+                                  levels = c(1, 2, 3), 
+                                  labels = c(1, 2, 3)) 
+data$Fathers_Occupation <- as.integer(as.character(data$Fathers_Occupation))
+print(data$Fathers_Occupation)
+```
+
+```{r}
+##e)
+female_driver <- subset(data, Sex == 2 & Fathers_Occupation == 2)
+print(female_driver)
+```
+
+```{r}
+##f)
+siblings_5_or_more <- subset(data, Siblings_at_School >= 5)
+print(siblings_5_or_more)
+```
+##4.
+```{r}
+Date <- c(
+  "July 14", "July 14", "July 14",
+  "July 15", "July 15", "July 15",
+  "July 17", "July 17", "July 17",
+  "July 18", "July 18", "July 18",
+  "July 20", "July 20", "July 20",
+  "July 21", "July 21", "July 21"
+)
+Sentiment <- rep(c("Negative", "Neutral", "Positive"), times = 6)
+Count <- c(
+  2400, 1600, 1700,
+  3800, 2900, 3200,
+  3300, 1700, 2500,
+  3300, 2000, 2600,
+  2200, 1400, 1600,
+  3700, 2800, 3400
+)
+sentiment_data <- data.frame(Date, Sentiment, Count)
+sentiment_data
+```
+
+```
+
+
+
+
+
+
+
+
+
+
