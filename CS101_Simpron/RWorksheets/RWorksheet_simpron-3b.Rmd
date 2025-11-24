@@ -15,11 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ##a)
 df <- data.frame(
   Respondents = 1:20,
-  Sex = c(2,2,1,2,2,2,1,2,2,1,1,2,2,2,2,2,2,1,1,2),
-  Fathers_Occupation = c(1,3,3,3,1,2,1,1,1,1,3,1,1,3,3,1,3,1,1,1),
-  Persons_at_Home = c(5,7,3,8,5,9,6,7,8,8,7,3,4,7,8,8,3,11,7,7),
-  Siblings_at_School = c(6,4,4,1,2,1,5,3,1,2,3,2,2,5,2,3,2,7,3,3),
-  Types_of_Houses = c(1,2,3,1,1,3,2,1,2,3,2,1,1,2,1,2,3,3,3,3)
+  Sex = c(2,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,1,2),
+  Fathers_Occupation = c(1,3,3,3,1,2,3,1,1,1,3,2,1,3,3,1,3,1,2,1),
+  Persons_at_Home = c(5,7,3,8,5,9,6,7,8,4,7,5,4,7,8,8,3,11,7,6),
+  Siblings_at_School = c(6,4,4,1,2,1,5,3,1,2,3,2,5,5,2,1,2,5,3,2),
+  Types_of_Houses = c(1,2,3,1,1,3,3,1,2,3,2,3,2,2,3,3,3,3,3,2)
 )
 
 print(df)
@@ -84,7 +84,7 @@ print(str(df))
 #This kind of structure is useful when you want to initialize a data frame first and then add rows to it later.
 
 ```
-##2.
+##3.
 ```{r}
 HouseholdData <- data.frame(
   Respondents = 1:10,
@@ -149,28 +149,10 @@ print(siblings_5_or_more)
 ```
 ##4.
 ```{r}
-Date <- c(
-  "July 14", "July 14", "July 14",
-  "July 15", "July 15", "July 15",
-  "July 17", "July 17", "July 17",
-  "July 18", "July 18", "July 18",
-  "July 20", "July 20", "July 20",
-  "July 21", "July 21", "July 21"
-)
-Sentiment <- rep(c("Negative", "Neutral", "Positive"), times = 6)
-Count <- c(
-  2400, 1600, 1700,
-  3800, 2900, 3200,
-  3300, 1700, 2500,
-  3300, 2000, 2600,
-  2200, 1400, 1600,
-  3700, 2800, 3400
-)
-sentiment_data <- data.frame(Date, Sentiment, Count)
-sentiment_data
+#The bar chart illustrates the daily distribution of tweet sentiments Negative, Neutral, and Positive across several dates ranging from July 25 to July 29, 2020. For each day, the negative sentiment category consistently shows the highest tweet count, indicating that more users expressed negative reactions during this period. Neutral sentiments generally occupy the middle range, while positive sentiments show the lowest counts across most days. Notably, July 26 and July 29 display sharp peaks in negative tweets, with both days having significantly higher negative sentiment than the other categories. In contrast, positive tweets remain relatively stable with only small variations. Overall, the graph suggests that user sentiment on these dates leaned strongly negative, with neutral and positive sentiments trailing behind by noticeable margins.
 ```
 
-```
+
 
 
 
