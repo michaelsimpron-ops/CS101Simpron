@@ -26,7 +26,9 @@ print(table)
 write.csv(table, "shoe_data.csv", row.names = FALSE)
 
 #It create a data base containing the shoe size and height.
+```
 
+```{r}
 #B.
 table$gender <- c("Male", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Female",
                   "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Female",
@@ -39,10 +41,14 @@ females <- subset(table, gender == "Female")
 
 print(males)
 print(females)
+```
 
+```{r}
 #C.
 mean(table$Shoe_Height)
+```
 
+```{r}
 #D.
 #Yes there are, because taller individuals tend to have bigger footsize.
 
@@ -88,24 +94,39 @@ data
 
 ###6.
 ```{r}
-exhaustive_search <- function(num) {
-  if (is.na(num)) {
-    cat("Invalid input. Please enter a numeric value.\n")
-  } else if (num < 1 || num > 50) {
-    cat("The number selected is beyond the range of 1 to 50\n")
-  } else {
-    if (num == 20) {
+search_number <- function(target, vec) {
+  for (v in vec) {
+    if (v == target) {
+      return(TRUE)
+    }
+  }
+  return(FALSE)
+}
+
+# Ask the user to input a number (or you could simulate with sample)
+input_str <- readline(prompt = "Please enter a number (1-50): ")
+x <- as.numeric(input_str)
+
+if (is.na(x)) {
+  cat("You did not enter a valid number.\n")
+} else if (x < 1 || x > 50) {
+  cat("The number selected is beyond the range of 1 to 50\n")
+} else {
+ 
+  vec <- 1:50
+  found <- search_number(x, vec)
+  
+  if (found) {
+    if (x == 20) {
       cat("TRUE\n")
     } else {
-      cat(num, "\n")
+      cat(x, "\n")
     }
+  } else {
+    cat("Number not found in the search space.\n")
   }
 }
 
-# Test with sample inputs
-exhaustive_search(20)
-exhaustive_search(25)
-exhaustive_search(100)
 ```
 
 ###7.
@@ -151,7 +172,9 @@ grades_df <- data.frame(
 )
 
 grades_df
+```
 
+```{r}
 #B.
 averages <- (grades_df$Grade1 + grades_df$Grade2 + grades_df$Grade3 + grades_df$Grade4) / 4
 
@@ -161,7 +184,9 @@ high_averages <- averages[averages >= 90]
 for (i in 1:nrow(high_achievers)) {
   cat(high_achievers$Name[i], "'s average grade this semester is ", high_averages[i], ".\n", sep = "")
 }
+```
 
+```{r}
 #C.
 avg_grade1 <- sum(grades_df$Grade1) / nrow(grades_df)
 avg_grade2 <- sum(grades_df$Grade2) / nrow(grades_df)
@@ -176,7 +201,9 @@ for (i in 1:length(test_avgs)) {
     cat("The", test_names[i], "was difficult.\n")
   }
 }
+```
 
+```{r}
 #D.
 highest_grades <- apply(grades_df[, 2:5], 1, function(row) {
   sorted <- sort(as.numeric(row))
