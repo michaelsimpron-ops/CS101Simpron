@@ -16,60 +16,83 @@ LETTERS
 ##BASED ON LETTERS
 #a)
 LET1 <- c(LETTERS[1:11])
+LET1
+```
 
+```{r}
+LETTERS
 #b)
 LET2 <- c(LETTERS[seq(1, 26, 2)])
+LET2
+```
 
+```{r}
 #c)
 vowels <- LETTERS[LETTERS %in% c("A", "E", "I", "O", "U")]
 print(vowels)
 
+```
 
+```{r}
 letters
-
 #BASED on letters
 
 #d)
 let1 <- c(letters[22:26])
+let1
+```
 
+```{r}
+letters
 #e)
 let2 <- c(letters[16:23])
+let2
 ```
 
 ##2.
 ```{r}
 #a
 city <- c("Tuguegarao City","Manila","Iloilo City","Tacloban","Samal Island","Davao City")
+```
 
+```{r}
 
 #b
 temp <- c(42, 39, 34, 34, 30, 27)
+```
 
+```{r}
 #c
 table1 <- data.frame (
   City=city,
   Temperature=temp
 )
 table1
+```
 
+```{r}
 #d
 table2 <- data.frame(
   City=city,
   Temperature=temp
 )
 table2
+```
 
+```{r}
 #e
 str(table1)
 str(table2)
 #Counted the variables per table and the date inside the object.
 
+```
 
-
-
+```{r}
 #f
 table2[3:4,]
+```
 
+```{r}
 #g
 city_highest <- table2$City[which.max(table2$Temperature)]
 city_lowest <- table2$City[which.min(table2$Temperature)]
@@ -100,28 +123,42 @@ diag(6)
 #a)
 matrix_d2 <- matrix(c(1:8, 11:14),3,4)
 matrix_d2
+```
 
+```{r}
 #b)
 product_matrix <- matrix_d2 * 2
 print(product_matrix)
+```
 
+```{r}
 #c
 matrix_d2[2,]
+```
 
+```{r}
 #d
 matrix_d2[1:2, 3:4]
+```
 
+```{r}
 #e
 matrix_d2[3, 2:3]
+```
 
+```{r}
 #f
 matrix_d2 [,4]
+```
 
+```{r}
 #g
 rownames(matrix_d2)<-c("isa", "dalawa","tatlo")
 colnames(matrix_d2)<-c("uno","dos","tres","quatro")
 matrix_d2
+```
 
+```{r}
 #h
 dim(matrix_d2)<-c(6,2)
 matrix_d2
@@ -160,22 +197,21 @@ values_repeated <- rep(values, 2)
 #Create 3D array with 2 rows, 4 columns
 my_array <- array(values_repeated, dim = c(2, 4, 3))
 print(my_array)
+```
 
-
+```{r}
 
 ##b)
 dim(my_array)
 length(dim(my_array))
 #b. It has 3 dimensions
+```
 
-
-
+```{r}
 ##c)
 rownames <- c("a", "b")
 colnames <- c("A", "B", "C", "D")
 dimnames_list <- list(rownames, colnames, c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array"))
-
-
 
 #Assigning dimnames to the array
 dimnames(my_array) <- dimnames_list
