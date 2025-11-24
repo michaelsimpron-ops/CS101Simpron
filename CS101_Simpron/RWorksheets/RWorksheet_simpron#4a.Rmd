@@ -103,7 +103,7 @@ search_number <- function(target, vec) {
   return(FALSE)
 }
 
-# Ask the user to input a number (or you could simulate with sample)
+
 input_str <- readline(prompt = "Please enter a number (1-50): ")
 x <- as.numeric(input_str)
 
